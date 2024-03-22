@@ -31,7 +31,7 @@ const collectEmployees = function() {
         // check that the user entered a valid input (number)
         if (isNaN(salary)) {
           alert("That is not a number. Please try again.");
-          let salary = prompt("Enter salary:");
+          salary = prompt("Enter salary:");
         }
         else {
           // store user inputs into an array
@@ -63,6 +63,7 @@ const displayAverageSalary = function(employeesArray) {
 
   // iterate over employeesArray and add each employee's salary to salarySum
   for (i=0; i < employeesArray.length; i++) {
+    // convert salary (string) to number
     salarySum = salarySum + Number(employeesArray[i].salary);
   }
 
@@ -70,12 +71,19 @@ const displayAverageSalary = function(employeesArray) {
   averageSalary = salarySum / employeesArray.length;
 
   // display average salary
-  console.log(averageSalary);
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is  $${averageSalary}.`);
 }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
-  // TODO: Select and display a random employee
+  // use Math.random() method to select random number for index
+  const index = Math.floor(Math.random()*employeesArray.length);
+
+  // grab object at random index in employeesArray
+  randomEmployee = employeesArray[index];
+
+  // display random employee
+  console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
 }
 
 /*
