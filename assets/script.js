@@ -28,29 +28,27 @@ const collectEmployees = function() {
         // ask user for employee's salary
         let salary = prompt("Enter salary:");
 
-        // check that the user entered a valid input (number)
+        // check that the user entered a valid input (number); if not, salary defaults to $0
         if (isNaN(salary)) {
-          alert("That is not a number. Please try again.");
-          salary = prompt("Enter salary:");
+          salary = 0;
         }
-        else {
-          // store user inputs into an array
-          employeeObject = {
-            firstName: firstName,
-            lastName: lastName,
-            salary: salary
-          };
 
-          // add employeeObject into employeesArray
-          employeesArray.push(employeeObject);
+        // store user inputs into an array
+        employeeObject = {
+          firstName: firstName,
+          lastName: lastName,
+          salary: salary
+        }
 
-          // ask user if they want to add more
-          keepCollecting = confirm("Do you want to add another employee?");
+        // add employeeObject into employeesArray
+        employeesArray.push(employeeObject);
 
-          // if user successfully enters all inputs and decides to stop entering more employees, return employeesArray
-          if (!keepCollecting) {
-            return employeesArray;
-          }
+        // ask user if they want to add more
+        keepCollecting = confirm("Do you want to add another employee?");
+
+        // if user successfully enters all inputs and decides to stop entering more employees, return employeesArray
+        if (!keepCollecting) {
+          return employeesArray;
         }
       }
     }
@@ -71,7 +69,7 @@ const displayAverageSalary = function(employeesArray) {
   averageSalary = salarySum / employeesArray.length;
 
   // display average salary
-  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is  $${averageSalary}.`);
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is  $${averageSalary.toFixed(2)}.`);
 }
 
 // Select a random employee
