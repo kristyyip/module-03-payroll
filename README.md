@@ -27,4 +27,4 @@ THEN my employee data is displayed on the page sorted alphabetically by last nam
 The project has been deployed [here](https://kristyyip.github.io/module-03-payroll//).
 
 ![Prompt](assets/images/prompt.png)
-![Display](assets/images/display.png)
+![Display](assets/images/display-new.png)
